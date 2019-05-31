@@ -61,6 +61,8 @@ class Dashboard extends Component{
     getStoredData(){
         if(ls.get("city") === null){
             //empty data
+            var cities = []
+            return cities;
 
         }else{
             //data is present
@@ -84,12 +86,15 @@ class Dashboard extends Component{
         } */
 
         var cities = this.getStoredData();
-        if(cities.length > 9){
-            offset = cities.length - 10;
+        if(cities.length > 0){
+            if(cities.length > 9){
+                offset = cities.length - 10;
+            }
+            for(var i = cities.length-1; i > offset; i--){
+                tiles.push(<div className="col-md-4"><Tile city={cities[i].name} temp={cities[i].temp} humd={cities[i].humd}/></div>);
+            }
         }
-        for(var i = cities.length-1; i > offset; i--){
-            tiles.push(<div className="col-md-4"><Tile city={cities[i].name} temp={cities[i].temp} humd={cities[i].humd}/></div>);
-        }
+     
         return(
             <div className="container">
                 <Header />
