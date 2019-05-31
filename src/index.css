@@ -1,0 +1,25 @@
+body{
+  background: #007bff;
+}
+
+h1,p{
+  color: #FFF;
+}
+
+div.google-map {
+  height: 50vh;
+  width: 50vw;
+  align-content: center;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 10px;
+}
+
+.card-text h1{
+  color: #000;
+}
+
+.card{
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
