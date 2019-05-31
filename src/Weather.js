@@ -40,7 +40,7 @@ class Weather extends Component{
         if(nextProps.lat !== this.props.lat){
             //different props
             //make a call
-        const OPEN_WEATHER_MAP_URL = 'http://api.openweathermap.org/data/2.5/weather?&units=metric&APPID=5cefd7cdb8580f4f859bb32b687317a6';
+        const OPEN_WEATHER_MAP_URL = 'https://api.openweathermap.org/data/2.5/weather?&units=metric&APPID=5cefd7cdb8580f4f859bb32b687317a6';
 
         var requestUrl = `${OPEN_WEATHER_MAP_URL}&lat=${nextProps.lat}&lon=${nextProps.lng}`;
 
