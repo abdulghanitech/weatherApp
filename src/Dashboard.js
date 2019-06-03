@@ -90,7 +90,7 @@ class Dashboard extends Component{
             if(cities.length > 9){
                 offset = cities.length - 10;
             }
-            for(var i = cities.length-1; i > offset; i--){
+            for(var i = cities.length-1; i >= offset; i--){
                 tiles.push(<div className="col-md-4"><Tile city={cities[i].name} temp={cities[i].temp} humd={cities[i].humd}/></div>);
             }
         }
