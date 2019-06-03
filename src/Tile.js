@@ -22,8 +22,8 @@ class Tile extends Component{
                 <Card.Body>
                     <Card.Title>{this.props.city}</Card.Title>                  
                     <Card.Text>
-                    <h1>{this.props.temp} <FontAwesomeIcon icon="cloud-sun" /></h1>
-                    <h1>{this.props.humd} <FontAwesomeIcon icon="tint" /></h1>              
+                    <h1>{this.props.temp} <FontAwesomeIcon icon="cloud-sun" color="yellow"  /></h1>
+                    <h1>{this.props.humd} <FontAwesomeIcon icon="tint" color="skyblue" /></h1>              
                     </Card.Text>                
                 </Card.Body>
             </Card>

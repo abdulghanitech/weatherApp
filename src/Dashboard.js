@@ -98,7 +98,7 @@ class Dashboard extends Component{
         return(
             <div className="container">
                 <Header />
-                <h1>Dashboard</h1>
+                
                 <div className="row">
                 {tiles} 
                 </div>

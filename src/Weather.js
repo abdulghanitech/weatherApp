@@ -4,6 +4,16 @@ import axios from "axios";
 
 import ls from 'local-storage';
 
+import Card from "react-bootstrap/Card";
+
+import { library } from '@fortawesome/fontawesome-svg-core';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faCloudSun } from '@fortawesome/free-solid-svg-icons';
+import { faTint } from '@fortawesome/free-solid-svg-icons';
+
+library.add(faCloudSun);
+library.add(faTint);
+
 
 class Weather extends Component{
 
@@ -13,22 +23,12 @@ class Weather extends Component{
         this.state = {
             lat: this.props.lat,
             lng: this.props.lng,
+            description: "",
             temp: 'Loading',
             humd: 'Loading'
         }
     }
 
-    setCity(){
-
-    }
-
-    getCity(){
-        
-    }
-
-    componentDidUpdate(){
-        
-    }
 
     componentWillReceiveProps(nextProps) {
 
@@ -52,7 +52,8 @@ class Weather extends Component{
               } else {
                 this.setState({
                     temp: res.data.main.temp,
-                    humd: res.data.main.humidity
+                    humd: res.data.main.humidity,
+                    description: res.data.weather[0].description
                 });
                 var counter = 0;
                 //check value of counter
@@ -118,10 +119,21 @@ class Weather extends Component{
 render(){
     return(
         <div>
-            <h1>Weather</h1>
+         {/*    <h1>Weather</h1>
             <p>Temperature: {this.state.temp} </p>
             <p>Humidity: {this.state.humd}</p>
-            <p>lat: {this.state.lat} lng: {this.state.lng}</p>
+            <p>lat: {this.state.lat} lng: {this.state.lng}</p> */}
+            <Card style={{ width: '70vw', marginLeft: 'auto', marginRight: 'auto' }}>
+                <Card.Body>
+                                      
+                    <Card.Text>
+                    <h1>{this.props.city}</h1>      
+                    <h3>Temperature {this.state.temp} <FontAwesomeIcon icon="cloud-sun" color="yellow" /> | Humidity {this.state.humd} <FontAwesomeIcon icon="tint" color="skyblue" /></h3>
+                    <h3>{this.state.description}</h3>
+                            
+                    </Card.Text>                
+                </Card.Body>
+            </Card>
         </div>
     );
 }

@@ -15,7 +15,7 @@ div.google-map {
   margin-top: 10px;
 }
 
-.card-text h1{
+.card-text h1, h3{
   color: #000;
 }
 

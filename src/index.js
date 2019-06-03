@@ -4,6 +4,7 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import './index.css';
 import App from './App';
 import Dashboard from "./Dashboard";
+import About from "./About";
 import * as serviceWorker from './serviceWorker';
 import {Route, hashHistory, BrowserRouter as Router} from 'react-router-dom';
 
@@ -12,6 +13,7 @@ const routing = (
       <div>
         <Route exact path="/" component={App} />
         <Route path="/dashboard" component={Dashboard} />
+        <Route path="/about" component={About} />
         
       </div>
     </Router>

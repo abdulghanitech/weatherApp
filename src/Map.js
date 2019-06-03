@@ -18,8 +18,8 @@ class Map extends Component{
     this.state = {
       city: '',
       query: '',
-      lat: 17.385044,
-      lng: 78.486671,
+      lat: 17.315044,
+      lng: 78.426671,
       citySet: false,
       latlngChng: false
     }; 
@@ -61,11 +61,11 @@ class Map extends Component{
                 />
         </MuiThemeProvider>
         {
-            isCitySet ? (<GoogleMapCustom lat={this.state.lat} lng={this.state.lng} />) : (<div></div>)
+            isCitySet ? (<div><GoogleMapCustom lat={this.state.lat} lng={this.state.lng} /> <Weather lat={this.state.lat} lng={this.state.lng} city={this.state.city}/></div>) : (<div></div>)
         
         }
 
-        <Weather lat={this.state.lat} lng={this.state.lng} />
+        
         
             
         </div>
