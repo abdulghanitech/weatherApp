@@ -55,27 +55,6 @@ class Weather extends Component{
                     humd: res.data.main.humidity,
                     description: res.data.weather[0].description
                 });
-                var counter = 0;
-                //check value of counter
-                if(ls.get("counter") === null){
-                     //counter is not set
-                     counter = 1;
-                     ls.set("counter", 1);
-                     var resTemp = "res"+counter;
-                     ls.set(resTemp,res.data);
-                    
-                }else{
-                   //counter is set
-                    counter = parseInt(ls.get("counter"));
-                    counter++;
-                    //increment the result
-                    var resTemp = "res"+counter;
-                    ls.set(resTemp,res.data);
-
-                    //increment the counter
-                    ls.set("counter", counter);
-                    
-                }
                 
                 //get previous data
                 var cities = ls.get("city");
@@ -119,18 +98,12 @@ class Weather extends Component{
 render(){
     return(
         <div>
-         {/*    <h1>Weather</h1>
-            <p>Temperature: {this.state.temp} </p>
-            <p>Humidity: {this.state.humd}</p>
-            <p>lat: {this.state.lat} lng: {this.state.lng}</p> */}
             <Card style={{ width: '70vw', marginLeft: 'auto', marginRight: 'auto' }}>
-                <Card.Body>
-                                      
+                <Card.Body>                                    
                     <Card.Text>
                     <h1>{this.props.city}</h1>      
                     <h3>Temperature {this.state.temp} <FontAwesomeIcon icon="cloud-sun" color="yellow" /> | Humidity {this.state.humd} <FontAwesomeIcon icon="tint" color="skyblue" /></h3>
-                    <h3>{this.state.description}</h3>
-                            
+                    <h3>{this.state.description}</h3>                            
                     </Card.Text>                
                 </Card.Body>
             </Card>

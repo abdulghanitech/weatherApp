@@ -23,12 +23,7 @@ class Map extends Component{
       citySet: false,
       latlngChng: false
     }; 
-    
-    //bind functions
-    //this.handleSelectChange = this.handleSelectChange.bind(this);
-
   }
-
 
 
   handleSelectChange(newCity){
@@ -50,8 +45,7 @@ class Map extends Component{
   }
 
   render(){
-      const isCitySet = this.state.city;
-      
+      const isCitySet = this.state.city;     
       return(
         <div>
         <MuiThemeProvider>
@@ -63,11 +57,7 @@ class Map extends Component{
         {
             isCitySet ? (<div><GoogleMapCustom lat={this.state.lat} lng={this.state.lng} /> <Weather lat={this.state.lat} lng={this.state.lng} city={this.state.city}/></div>) : (<div></div>)
         
-        }
-
-        
-        
-            
+        }            
         </div>
       );
   }
