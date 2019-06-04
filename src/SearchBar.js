@@ -1,7 +1,7 @@
 // Imports
 import React, { Component } from 'react';
 
-//Import React Scrit Libraray to load Google object
+//Import React Script Libraray to load Google object
 import Script from 'react-load-script';
 
 // Import Search Bar Components
